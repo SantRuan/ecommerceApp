@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: windowWidth,
-    height: windowHeight * 0.6,
     backgroundColor: '#FFFFFF',
   },
   form: {
