@@ -17,8 +17,6 @@ export default props => {
   const [password, setPassword] = useState('');
 
   const setUser = (emaiText,passwordText) =>{
-    console.log('ACESSOU O SET USER')
-    console.log(emaiText, passwordText)
     setEmailUser(emaiText)
     setPassword(passwordText)
     showUserStoredInTheStore()

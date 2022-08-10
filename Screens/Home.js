@@ -5,50 +5,32 @@
 import React, {useState} from 'react';
 import {Text, View, StyleSheet, Dimensions, TextInput} from 'react-native';
 import {windowHeight, windowWidth} from '../Constants/Dimensions';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faBars} from '@fortawesome/free-solid-svg-icons';
+import SearchComponent from '../Components/SearchComponent';
+import MenuIcon from '../Components/MenuIcon';
+import HomeText from '../Components/HomeText';
+import Carousel from 'react-native-snap-carousel';
 const heightWindow = Dimensions.get('window').height;
 const HomeScreen = () => {
   const [search, setSearch] = useState('');
   return (
-    <View style={{flex: 1, alignItems: 'center', backgroundColor: 'yellow'}}>
+    <View style={{display:'flex', flex: 1, alignItems: 'center', backgroundColor: 'yellow'}}>
       <View style={styles.Container}>
         <View style={styles.MenuAndSearchBarContainer}>
-          <View styles={styles.menuIcon}>
-            <FontAwesomeIcon icon={faBars} size={30} />
-          </View>
-          <TextInput
-            style={styles.SearchBar}
+          <MenuIcon />
+          <SearchComponent 
             onChangeText={setSearch}
-            value={search}
-          />
+            value={search} />
         </View>
         <View
-          style={{
-            flex: 1,
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: 'red',
-          }}>
-          <Text>Home Text</Text>
+          style={styles.HomeTextContainer}>
+          <HomeText />
         </View>
         <View
-          style={{
-            flex: 1,
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: 'blue',
-          }}>
+          style={styles.ProductsContainer}>
           <Text>Products</Text>
         </View>
         <View
-          style={{
-            flex: 1,
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: 'gray',
-            marginBottom: windowHeight * 0.01,
-          }}>
+          style={styles.FooterContainer}>
           <Text>Footer</Text>
         </View>
       </View>
@@ -60,29 +42,44 @@ export default HomeScreen;
 
 const styles = StyleSheet.create({
   MenuAndSearchBarContainer: {
-    flex: 1,
+    display: 'flex',
+    height: windowHeight / 6,
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
     backgroundColor: 'green',
     width: windowWidth * 0.9,
-    marginTop: 50,
-    marginBottom: 15,
+    marginTop: 0,
   },
+  HomeTextContainer:{
+    display:'flex',
+    height: windowHeight / 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'red',
+
+  }
+,
   Container: {
     display: 'flex',
     flex: 1,
     backgroundColor: 'orange',
     width: windowWidth * 0.9,
   },
-  SearchBar: {
-    backgroundColor: 'white',
-    width: '80%',
-    marginLeft: 'auto',
-    borderRadius: 15,
+  ProductsContainer:{
+      display:'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: 'blue',
+      height: windowHeight / 2,
+      width: '100%'
   },
-  menuIcon: {
+  FooterContainer:{
+    display: 'flex',
+    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
-  },
+    justifyContent: 'center',
+    backgroundColor: 'gray',
+    marginBottom: windowHeight * 0.01,
+  }
 });
