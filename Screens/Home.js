@@ -21,7 +21,7 @@ const HomeScreen = () => {
     '#B34D4D',
   ];
   return (
-    <View style={{display:'flex', flex: 1, alignItems: 'center', backgroundColor: 'yellow'}}>
+    <View style={{display:'flex', flex: 1, alignItems: 'center', backgroundColor: '#E5E5E5'}}>
       <View style={styles.Container}>
         <View style={styles.MenuAndSearchBarContainer}>
           <MenuIcon />
@@ -36,7 +36,6 @@ const HomeScreen = () => {
         <View
           style={styles.ProductsContainer}>
             <Carousel data={data}/>
-          <Text>Products</Text>
         </View>
         <View
           style={styles.FooterContainer}>
@@ -56,7 +55,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
-    backgroundColor: 'green',
+    backgroundColor: '#E5E5E5',
     width: windowWidth * 0.9,
     marginTop: 0,
   },
@@ -65,21 +64,21 @@ const styles = StyleSheet.create({
     height: windowHeight / 10,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'red',
+    backgroundColor: '#E5E5E5',
 
   }
 ,
   Container: {
     display: 'flex',
     flex: 1,
-    backgroundColor: 'orange',
+    backgroundColor: '#E5E5E5',
     width: windowWidth * 0.9,
   },
   ProductsContainer:{
       display:'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: 'blue',
+      backgroundColor: '#E5E5E5',
       height: windowHeight / 2,
       width: '100%'
   },
@@ -88,7 +87,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'gray',
+    backgroundColor: '#E5E5E5',
     marginBottom: windowHeight * 0.01,
   }
 });

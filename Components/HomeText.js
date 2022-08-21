@@ -13,6 +13,7 @@ export default HomeText;
 
 const styles = StyleSheet.create({
   text:{
+    color: '#5956E9',  
     fontFamily: 'Raleway',
     fontStyle: 'normal',
     fontWeight: '700',
