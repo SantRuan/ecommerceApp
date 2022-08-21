@@ -8,10 +8,18 @@ import {windowHeight, windowWidth} from '../Constants/Dimensions';
 import SearchComponent from '../Components/SearchComponent';
 import MenuIcon from '../Components/MenuIcon';
 import HomeText from '../Components/HomeText';
-import Carousel from 'react-native-snap-carousel';
+import Carousel from '../Components/Carousel';
 const heightWindow = Dimensions.get('window').height;
 const HomeScreen = () => {
   const [search, setSearch] = useState('');
+  const data = [
+    '#FF6633',
+    '#FFB399',
+    '#FF33FF',
+    '#00B3E6',
+    '#99FF99',
+    '#B34D4D',
+  ];
   return (
     <View style={{display:'flex', flex: 1, alignItems: 'center', backgroundColor: 'yellow'}}>
       <View style={styles.Container}>
@@ -27,6 +35,7 @@ const HomeScreen = () => {
         </View>
         <View
           style={styles.ProductsContainer}>
+            <Carousel data={data}/>
           <Text>Products</Text>
         </View>
         <View
